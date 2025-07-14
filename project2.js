@@ -1,24 +1,18 @@
 const prompt = require("prompt-sunc")()
 
-let num1;
-let num2;
-while (true){
-    num1 = parseFloat(prompt("Enter First Number : "))
-    if (IsNan(num1)){
-        console.log("Invalid input")
-    }else{
-        break
+function getNumber(numberString){
+    while (true){
+        const num1 = parseFloat(prompt("Enter Number " +numberString +": "))
+        if (IsNan(num1)){
+            console.log("Invalid input")
+        }else{
+            return number
+        }
     }
 }
 
-while (true){
-    num2 = parseFloat(prompt("Enter Second Number :"))
-    if (IsNan(num2 )){
-        console.log("Invalid input")
-    }else{
-        break
-    }
-}
+const num1 = getNumber('One');
+const num2 = getNumber('Two');
 
 const operator = prompt("Enter Sign")
 
@@ -34,12 +28,14 @@ switch(operator){
 
         break;
     case "/":
+        if (num2 === 0){
+            valid = false
+            console.log("Zero division error..")
+        }
         result = num1/num2
-
         break;
     case "*":
         result = num1*num2
-
         break;
 
     default:
