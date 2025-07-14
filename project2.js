@@ -1,27 +1,28 @@
-const num1 = prompt("Enter First Number : ");
-const num2 = prompt("Enter Second Number :");
+const prompt = require("prompt-sunc")()
+const num1 = parseFloat(prompt("Enter First Number : "))
+const num2 = parseFloat(prompt("Enter Second Number :"))
+const operator = prompt("Enter Sign")
 
+let result;
 switch(operator){
     case "+":
-        result = num1+num2;
-        console.log(result);
+        result = num1+num2
+        console.log(result)
         break;
     case "-":
-        result = num1+num2;
-        console.log(result);
+        result = num1-num2
+        console.log(result)
         break;
     case "/":
-        result = num1+num2;
-        console.log(result);
+        result = num1/num2
+        console.log(result)
         break;
     case "*":
-        result = num1+num2;
-        console.log(result);
+        result = num1*num2
+        console.log(result)
         break;
-    case "+":
-        result = num1+num2;
-        console.log(result);
-        break;
+
     default:
-        console.log("Invalid Character");
+        console.log("Invalid Character")
+        break;
 }
